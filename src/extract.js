@@ -57,10 +57,7 @@ function preprocessScript(data, type) {
   let scriptLang = undefined;
   switch (type) {
   case 'vue':
-    const vueFile = vueCompiler.parse({ compiler, source: data, needMap: false });
-    if (!vueFile.script) break;
-    scriptData = vueFile.script.content.trim();
-    scriptLang = vueFile.script.lang;
+    scriptData = '';
     break;
   default:
     scriptData = data || '';
